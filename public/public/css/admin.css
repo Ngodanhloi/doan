@@ -1,0 +1,319 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    /* Màu nền tổng thể */
+}
+
+header {
+    background-color: #17486f;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: yellowgreen;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+    background-color: #fff;
+    /* Màu nền của các phần */
+    padding: 20px;
+    border-radius: 5px;
+    /* Cong viền */
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    /* Footer cố định dưới cùng */
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+}
+
+th,
+td {
+    padding: 15px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.btnedit a {
+    font-size: 15px;
+    color: black;
+    text-decoration: none;
+}
+
+/* Styling for popup container */
+.popup-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Semi-transparent background */
+    z-index: 1000;
+    /* Ensures it is above all other content */
+    padding: 20px;
+    /* Avoids sticking to the edges */
+}
+
+/* Basic styling for the popup form */
+#popupForm {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    /* Responsive width */
+    max-width: 600px;
+    /* Maximum width */
+    overflow: hidden;
+    position: relative;
+}
+
+/* Styling for form groups */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="file"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Textarea specific styling */
+.form-group textarea {
+    height: 120px;
+    /* Fixed height for text area */
+    resize: none;
+    /* Disables resizing */
+}
+
+/* Button styling */
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+    float: right;
+    /* Aligns the button to the right */
+    margin-top: 10px;
+    /* Adds some space above the button */
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+
+    right: 30px;
+    top: 30px;
+}
+
+#closePopupButton {
+    border: 2px solid #dc3545;
+    /* Adds a border to make the button stand out */
+}
+
+.edit-form-container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    /* Responsive width */
+    max-width: 600px;
+    /* Maximum width */
+    display: none;
+    /* Hidden by default, shown when needed */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1050;
+    /* Above most other content */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-group textarea {
+    height: 100px;
+    /* Fixed height for text area */
+}
+
+.btn-primary .btnedit {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    /* Ensure it's a block level element */
+    width: 100%;
+    /* Full width */
+}
+
+#popupForm {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    z-index: 9999;
+    display: none;
+}
+
+#popupForm.open {
+    display: block;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    /* Cho nút submit và đóng cách nhau */
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    /* Màu nền cho nút đóng */
+    color: white;
+    /* Màu chữ */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+element.style {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+
+/* Đảm bảo rằng các phần tử phân trang được căn giữa theo chiều ngang */
+.pagination {
+
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+/* CSS cho trường email */
+#email {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: none;
+    transition: border-color 0.3s ease;
+}
+
+#email:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* CSS cho trường password */
+#password {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: none;
+    transition: border-color 0.3s ease;
+}
+
+#password:focus {
+    border-color: #007bff;
+    outline: none;
+}
