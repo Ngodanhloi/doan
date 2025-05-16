@@ -101,16 +101,23 @@ class WelcomeController extends Controller
     }
 
     public function detail($id)
-    {
-        $sanPham = DB::select("select * from `sanpham` where `sanpham_id` = ?", [$id]);
+{
+    // Lấy thông tin sản phẩm
+    $sanPham = DB::select("select * from `sanpham` where `sanpham_id` = ?", [$id]);
 
+    if (!empty($sanPham)) {
+        // Lấy danh sách bình luận của sản phẩm theo ID
+        $binhluans = BinhLuan::where('sanpham_id', $id)->with('user')->get();
 
-        if (!empty($sanPham)) {
-            return view('product', ['sanpham' => $sanPham[0]]);
-        } else {
-            return redirect('/')->with('error', 'Sản phẩm không tồn tại');
-        }
+        return view('product', [
+            'sanpham' => $sanPham[0],
+            'binhluans' => $binhluans
+        ]);
+    } else {
+        return redirect('/')->with('error', 'Sản phẩm không tồn tại');
     }
+}
+
 
     /* Binh Luan Store*/
     public function store(Request $request)
