@@ -9,8 +9,8 @@ class CateController extends Controller
 {
     public function index()
     {
-        $cates = Category::all(); // Lấy danh sách danh mục
-        return view('ten-view-cua-ban', compact('cates')); 
+        $cates = Category::paginate(10);
+        return view('roleadmin.cate', compact('cates')); 
     }
 
     public function store(Request $request)

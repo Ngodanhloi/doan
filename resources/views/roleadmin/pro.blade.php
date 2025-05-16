@@ -55,9 +55,54 @@
         </div>
         @endif
         <section id="categories-section" class="admin-section">
-            <h2>Quản lý danh mục</h2>
+            <h2>Quản lý sản phẩm</h2>
+            @isset($pros)
+                @if ($pros->count())
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tên</th>
+                            <th>Mô Tả</th>
+                            <th>Giá</th>
+                            <th>Sale</th>
+                            <th>Hình</th>
+                            <th>Số lượng trong kho</th>
+                            <th>Danh mục</th>
+                            <th>Ngày tạo</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($pros as $pro)
+                        <tr>
+                            <td>{{ $pro->sanpham_id }}</td>
+                            <td>{{ $pro->ten }}</td>
+                            <td>{!! $pro->mota !!}</td>
+                            <td>{{ $pro->gia }}</td>
+                            <td>{{ $pro->sale }}</td>
+                            <td><img src="{{ asset('product/'.$pro->hinh) }}" width="80"></td>
+                            <td>{{ $pro->soluongtrongkho }}</td>
+                            <td>{{ $pro->category->ten ?? 'N/A' }}</td>
+                            <td>{{ $pro->created_at }}</td>
+                            <td>
+                                <!-- Bạn có thể thêm nút Edit / Xóa ở đây -->
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+                @else
+                <p>Không có sản phẩm nào.</p>
+                @endif
+                </tbody>
+                </table>
+                @else
+                <p>Không có danh mục nào.</p>
+                @endif
+                {{ $cates->links() }}
             <!-- Button to trigger the popup -->
-            <button id="openPopupButton" class="btn btn-primary">Thêm danh mục</button>
+            <button id="openPopupButton" class="btn btn-primary">Thêm sản phẩm</button>
             <!-- Popup form -->
             <div id="popupForm" style="display: none;">
                 <form id="addProductForm" action="{{ route('roleadmin.pro.store') }}" method="POST" enctype="multipart/form-data">
@@ -99,51 +144,7 @@
                 </form>
 
 
-                @isset($pros)
-                @if ($pros->count())
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Tên</th>
-                            <th>Mô Tả</th>
-                            <th>Giá</th>
-                            <th>Sale</th>
-                            <th>Hình</th>
-                            <th>Số lượng trong kho</th>
-                            <th>Danh mục</th>
-                            <th>Ngày tạo</th>
-                            <th>Thao tác</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($pros as $pro)
-                        <tr>
-                            <td>{{ $pro->sanpham_id }}</td>
-                            <td>{{ $pro->ten }}</td>
-                            <td>{!! $pro->mota !!}</td>
-                            <td>{{ $pro->gia }}</td>
-                            <td>{{ $pro->sale }}</td>
-                            <td><img src="{{ asset('storage/'.$pro->hinh) }}" width="80"></td>
-                            <td>{{ $pro->soluongtrongkho }}</td>
-                            <td>{{ $pro->category->ten ?? 'N/A' }}</td>
-                            <td>{{ $pro->created_at }}</td>
-                            <td>
-                                <!-- Bạn có thể thêm nút Edit / Xóa ở đây -->
-                            </td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-                @else
-                <p>Không có sản phẩm nào.</p>
-                @endif
-                </tbody>
-                </table>
-                @else
-                <p>Không có danh mục nào.</p>
-                @endif
-                {{ $cates->links() }}
+               
         </section>
     </main>
 </body>

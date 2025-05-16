@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('don_hang', function (Blueprint $table) {
             $table->increments('donhang_id');
+            $table->string('user_id');
+            $table->string('sanpham_id');
             $table->date('ngaydat');
             $table->decimal('tongtien', 10, 2);
             $table->timestamps();
