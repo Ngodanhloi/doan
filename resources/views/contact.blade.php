@@ -61,7 +61,7 @@
 
                         <li>
                             <a href="#" class="contact__link">
-                                <i class="fas fa-envelope"></i> nhom2@mail.com
+                                <i class="fas fa-envelope"></i> NhomC@mail.com
                             </a>
                         </li>
                     </ul>

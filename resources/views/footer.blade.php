@@ -53,7 +53,7 @@
                     </li>
                     <li class="footer__item">
                         <a href="#" class="footer__link">
-                            <i class="fas fa-envelope"></i> nhom2@mail.com
+                            <i class="fas fa-envelope"></i> nhomC@mail.com
                         </a>
                     </li>
                     <li class="footer__item">
@@ -94,7 +94,7 @@
     </div>
     <hr style="margin-bottom: 5px;">
     <div class="copyright">
-        <span class="footer__text" style="color: white;"> &copy Bản quyền thuộc về <a class="footer__link1" href="#" style="color:aliceblue">Nhóm 2</a></span>
+        <span class="footer__text" style="color: white;"> &copy Bản quyền thuộc về <a class="footer__link1" href="#" style="color:aliceblue">Nhóm C</a></span>
     </div>
 </div>
 <script>

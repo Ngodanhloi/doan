@@ -54,18 +54,24 @@ Route::post('/sanpham/{sanphamId}/like', [ProductController::class, 'increaseLik
 // Trong file routes/web.php
 Route::post('/subscribe', [SubscriptionController::class, 'subscribe'])->name('subscribe');
 
-/*Admin: Crud San Pham */
-Route::get('/admin', 'ProductController@admin')->name('admin');
-Route::post('/admin/sanpham/store', [ProductController::class, 'store'])->name('admin.sanpham.store');
-Route::put('/admin/sanpham/update/{sanpham_id}', [ProductController::class, 'update'])->name('admin.sanpham.update');
-Route::delete('/admin/sanpham/delete/{sanpham_id}', [ProductController::class, 'delete'])->name('admin.sanpham.delete');
-Route::get('admin/export_excel', [ProductController::class, 'exportExcel'])->name('admin.export_excel');
+// /*Admin: Crud San Pham */
+// Route::get('/admin', 'ProductController@admin')->name('admin');
+// Route::post('/admin/sanpham/store', [ProductController::class, 'store'])->name('admin.sanpham.store');
+// Route::put('/admin/sanpham/update/{sanpham_id}', [ProductController::class, 'update'])->name('admin.sanpham.update');
+// Route::delete('/admin/sanpham/delete/{sanpham_id}', [ProductController::class, 'delete'])->name('admin.sanpham.delete');
+// Route::get('admin/export_excel', [ProductController::class, 'exportExcel'])->name('admin.export_excel');
 
 /*Admin: Crud User */
 Route::get('roleadmin/user', [UserController::class, 'index'])->name('roleadmin.user.index');
 Route::post('/roleadmin/user/store', [UserController::class, 'store'])->name('roleadmin.user.store');
 Route::put('/roleadmin/user/update/{user_id}', [UserController::class, 'update'])->name('roleadmin.user.update');
 Route::delete('/roleadmin/user/delete/{user_id}', [UserController::class, 'delete'])->name('roleadmin.user.delete');
+
+/*Admin: Crud Pro */
+Route::get('roleadmin/pro', [ProductController::class, 'index'])->name('roleadmin.pro.index');
+Route::post('/roleadmin/pro/store', [ProductController::class, 'store'])->name('roleadmin.pro.store');
+Route::put('/roleadmin/pro/update/{danhmucsp_id}', [ProductController::class, 'update'])->name('roleadmin.pro.update');
+Route::delete('/roleadmin/pro/delete/{danhmucsp_id}', [ProductController::class, 'delete'])->name('roleadmin.pro.delete');
 
 /*Admin: Crud Cate */
 Route::get('roleadmin/cate', [CateController::class, 'index'])->name('roleadmin.cate.index');

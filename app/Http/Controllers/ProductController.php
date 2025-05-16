@@ -155,4 +155,11 @@ class ProductController extends Controller
 
         return response()->json(['message' => 'Cảm ơn bạn đã thích sản phẩm', 'likes' => $sanpham->like]);
     }
+    public function index()
+{
+    $pros = SanPham::paginate(3);
+    $cates = Category::paginate(10);
+    return view('roleadmin.pro', compact('pros', 'cates'));
+}
+
 }

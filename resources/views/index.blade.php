@@ -126,7 +126,7 @@
 <!-- HightLight  -->
 <div class="main__frame" style="background: #f2fbf7;">
     <div class="grid wide">
-        <h3 class="category__title">Nhóm 2 Cometics</h3>
+        <h3 class="category__title">Nhóm C Cometics</h3>
         <h3 class="category__heading">SẢN PHẨM NỔI BẬT</h3>
         <div class="owl-carousel hight owl-theme" id="productCarousel">
             @foreach($sanPham as $row)
@@ -200,7 +200,7 @@
 <!-- News -->
 <div class="main__frame bg-3">
     <div class="grid wide">
-        <h3 class="category__title">Nhóm 2 Cometics</h3>
+        <h3 class="category__title">Nhóm C Cometics</h3>
         <h3 class="category__heading">Tin Tức</h3>
         <div class="owl-carousel news owl-theme">
             @foreach($news as $new)

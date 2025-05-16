@@ -1,0 +1,110 @@
+ * {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+ }
+
+ body {
+     font-family: 'Roboto', sans-serif;
+     background-color: #f4f4f4;
+     color: #333;
+     line-height: 1.6;
+     margin: 0;
+     padding: 0;
+ }
+
+ .container {
+     max-width: 1200px;
+     margin: auto;
+     padding: 0 20px;
+ }
+
+ .product-detail {
+     display: flex;
+     margin-top: 50px;
+ }
+
+ .product-detail__image img {
+    width: 460px; /* Độ rộng hình ảnh */
+    height: 460px; /* Chiều cao tự động điều chỉnh để giữ tỉ lệ */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: block; /* Hiển thị hình ảnh dưới dạng block để tránh các khoảng trống */
+    margin: auto; /* Canh giữa hình ảnh */
+}
+
+
+ .product-detail__info {
+     padding: 0 20px;
+ }
+
+ .product-detail__name {
+     font-size: 24px;
+     margin-bottom: 10px;
+ }
+
+ .product-detail__price {
+     font-size: 18px;
+     margin-bottom: 10px;
+ }
+
+ .product-detail__description {
+     margin-bottom: 20px;
+ }
+
+ .add-to-cart-btn {
+     padding: 10px 20px;
+     font-size: 18px;
+     background-color: #ff5722;
+     color: #fff;
+     border: none;
+     border-radius: 5px;
+     cursor: pointer;
+     transition: background-color 0.3s;
+ }
+
+ .add-to-cart-btn:hover {
+     background-color: #ff6f3d;
+ }
+
+ /* CSS cho số lượng kho */
+ .product-detail__stock {
+     margin-top: 10px;
+     color: #555;
+     font-size: 14px;
+ }
+
+ /* CSS cho số lượng đã bán */
+ .product-detail__sold {
+     margin-top: 5px;
+     color: #555;
+     font-size: 14px;
+ }
+
+ /* CSS cho nút "Mua ngay" */
+ .buy-now-btn {
+     padding: 10px 20px;
+     font-size: 18px;
+     background-color: #007bff;
+     /* Màu nền cho nút "Mua ngay" */
+     color: #fff;
+     /* Màu chữ */
+     border: none;
+     border-radius: 5px;
+     cursor: pointer;
+     transition: background-color 0.3s;
+     display: inline-block;
+     /* Hiển thị dạng inline block */
+     width: 150px;
+     /* Độ rộng của nút */
+     text-align: center;
+     /* Căn giữa nội dung */
+ }
+
+ .buy-now-btn:hover {
+     background-color: #0056b3;
+     /* Màu nền khi di chuột qua */
+ }
+ .button{
+    padding-top: 240px;
+ }
